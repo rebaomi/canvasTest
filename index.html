@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+	<title>橡皮擦效果</title>
+	<style type="text/css">
+		html,body{
+			width: 100%;
+			height: 100%;
+			margin:0;
+			padding:0;
+		}
+		.view{
+			position: relative;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		.box{
+			position: absolute;
+			left:0;
+			top:0;
+			width: 100%;
+			height: 100%;
+			background:#000 url("pic1.jpg") no-repeat center center;
+			background-size: auto 100%;
+			backface-visibility: hidden;
+			overflow: hidden;
+		}
+		#cas{
+			opacity: 1;
+			-webkit-transition:opacity .5s;
+			-ms-transition:opacity .5s;
+			-moz-transition:opacity .5s;
+		}
+		
+		.noOp{
+			opacity: 0 !important;
+		}
+	</style>
+</head>
+<body>
+<div class="view">
+	<div class="box" id="bb">
+		<canvas id="cas" ></canvas>
+	</div>
+</div>
+
+<script charset="utf-8" src="./matting.js"></script>
+</body>
+</html>

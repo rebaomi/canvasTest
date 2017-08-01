@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+	<title>网格</title>
+	
+</head>
+<body>
+<div class="view">
+	<div class="box" id="bb">
+		<canvas id="tetris" width="1024" height="768"></canvas>
+	</div>
+</div>
+
+<script charset="utf-8">
+var canvas=document.getElementById("tetris");
+var context=canvas.getContext("2d");
+var size=32,
+maxX=180,
+maxY=180,
+level=1;
+drawGrid()
+function drawGrid(){
+context.strokeStyle="grey";
+for(var i=0;i<=maxX;i++){
+var start=i*size;
+var end=start+size;
+context.beginPath();
+context.moveTo(start,0);
+context.lineTo(size * i, size * maxY);
+context.stroke();
+context.closePath();
+}
+for(var i=0;i<=maxY;i++){
+var start=i*size;
+var end=start+size;
+context.beginPath();
+context.moveTo(0,start);
+context.lineTo(size * maxX,size * i);
+context.stroke();
+context.closePath();
+}
+}
+</script>
+</body>
+</html>
